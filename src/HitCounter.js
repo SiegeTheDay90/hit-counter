@@ -24,7 +24,7 @@
         // Increment existing or create new counter
         // Counters are organized by App then by Date
         HitCounter.inc = async function inc(counter_name){
-            const date = new Date().toLocaleDateString().replaceAll("/", "-");
+            const date = new Date().toLocaleDateString("en-US").replaceAll("/", "-");
             const docRef = await doc(db, "Hits", counter_name);
             let fetchedDoc = await getDoc(docRef);
 
